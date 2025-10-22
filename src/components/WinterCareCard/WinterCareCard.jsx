@@ -4,7 +4,6 @@ import { Link } from 'react-router';
 
 const WinterCareCard = ({ service }) => {
     const { serviceId, serviceName, providerName, providerEmail, price, rating, slotsAvailable, description, image, category } = service;
-    console.log(service);
     return (
         <div className='bg-white border border-gray-200 text-center'>
             <img className='w-full' src={image} alt={serviceName} />
@@ -17,7 +16,7 @@ const WinterCareCard = ({ service }) => {
                     </div>
                 </div>
             </div>
-            <Link className='text-gray-100 bg-orange-500 w-full py-2.5 block duration-300 hover:bg-orange-600'>View Details</Link>
+            <Link to={`service-details/${serviceId}`} className='text-gray-100 bg-orange-500 w-full py-2.5 block duration-300 hover:bg-orange-600'>View Details</Link>
         </div>
     )
 }

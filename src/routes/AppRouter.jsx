@@ -38,6 +38,7 @@ const AppRouter = createBrowserRouter([
             },
             {
                 path: 'service-details/:id',
+                loader: ()=>fetch('/data.json'),
                 element: <ServiceDetails/>
             }
 
