@@ -1,0 +1,74 @@
+[
+    {
+        "serviceId": 1,
+        "serviceName": "Guinea-Pig Care",
+        "providerName": "CozyCritters",
+        "providerEmail": "info@cozycritters.com",
+        "price": 20,
+        "rating": 4.7,
+        "slotsAvailable": 5,
+        "description": "Winter-specific care for guinea pigs including cozy bedding and nutrition guidance.",
+        "image": "https://i.ibb.co.com/DDPnWYNZ/service-6.jpg",
+        "category": "Small Pets"
+    },
+    {
+        "serviceId": 2,
+        "serviceName": "Rabbit Care",
+        "providerName": "BunnyHaven",
+        "providerEmail": "hello@bunnyhaven.com",
+        "price": 25,
+        "rating": 4.8,
+        "slotsAvailable": 4,
+        "description": "Keep your rabbit warm with insulated housing, winter-friendly diet, and grooming tips.",
+        "image": "https://i.ibb.co.com/nJFc51R/service-5.jpg",
+        "category": "Small Pets"
+    },
+    {
+        "serviceId": 3,
+        "serviceName": "Birds Care",
+        "providerName": "FeatherFriends",
+        "providerEmail": "support@featherfriends.com",
+        "price": 30,
+        "rating": 4.6,
+        "slotsAvailable": 6,
+        "description": "Provide optimal winter conditions, nutrition, and safe heating options for birds.",
+        "image": "https://i.ibb.co.com/ds8PcV9d/service-4.jpg",
+        "category": "Birds"
+    },
+    {
+        "serviceId": 4,
+        "serviceName": "Dog Healthcare",
+        "providerName": "PawProtect Clinic",
+        "providerEmail": "contact@pawprotect.com",
+        "price": 50,
+        "rating": 4.9,
+        "slotsAvailable": 3,
+        "description": "Comprehensive winter health check-ups, vaccinations, and paw protection for dogs.",
+        "image": "https://i.ibb.co.com/5x1mYTmh/service-3.jpg",
+        "category": "Healthcare"
+    },
+    {
+        "serviceId": 5,
+        "serviceName": "Cat Vaccinations",
+        "providerName": "FelineCare Center",
+        "providerEmail": "info@felinecare.com",
+        "price": 45,
+        "rating": 4.8,
+        "slotsAvailable": 5,
+        "description": "Essential winter vaccinations and preventive care for cats to stay healthy in cold months.",
+        "image": "https://i.ibb.co.com/G3vB9rgr/service-2.jpg",
+        "category": "Healthcare"
+    },
+    {
+        "serviceId": 6,
+        "serviceName": "Puppy Training",
+        "providerName": "HappyPaws Academy",
+        "providerEmail": "hello@happypawsacademy.com",
+        "price": 35,
+        "rating": 4.7,
+        "slotsAvailable": 8,
+        "description": "Winter indoor training sessions for puppies focusing on obedience, exercise, and socialization.",
+        "image": "https://i.ibb.co.com/rGtT1zJJ/service-1.jpg",
+        "category": "Training"
+    }
+]
