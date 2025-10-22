@@ -9,13 +9,20 @@ import ErrorMessage from '../../components/ErrorMessage/ErrorMessage'
 
 const Register = () => {
   const [showPassword, setShowPassword] = useState(false);
-  const { createUser, googleLogin } = useContext(AuthContex);
+  const [error, setError] = useState(false)
+  const { createUser, googleLogin, loading, setLoading } = useContext(AuthContex);
   const handleRegister = (event) => {
     event.preventDefault();
     const name = event.target.name.value;
     const email = event.target.email.value;
     const photo = event.target.photo.value;
     const password = event.target.password.value;
+    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{6,}$/;
+    setError(false)
+    if (!passwordRegex.test(password)) {
+      setError(true)
+      return
+    }
     createUser(email, password)
       .then(result => {
         console.log(result)
@@ -28,10 +35,12 @@ const Register = () => {
   const handleGoogleLogin = () => {
     googleLogin()
       .then(result => {
-        toast.success('Login successful')
+        toast.success('Login successful');
+        setLoading(false);
       })
       .catch(error => {
-        ErrorMessage(error)
+        ErrorMessage(error);
+        setLoading(false);
       })
   }
   return (
@@ -60,6 +69,7 @@ const Register = () => {
                   <button type='button' onClick={() => setShowPassword(!showPassword)} className='absolute top-1/2 right-5 -translate-y-1/2 cursor-pointer'>{showPassword ? <IoMdEyeOff /> : <FaEye />}</button>
                 </div>
               </div>
+              {error && <p className='text-red-500'>Password must be at least 6 characters long and include 1 uppercase letter, 1 lowercase letter, and 1 number.</p>}
               <input type="submit" value="Register" className='bg-orange-500 w-full text-gray-100 py-2 cursor-pointer border duration-300 hover:bg-gray-100 border-orange-500 hover:text-orange-500 font-medium' />
             </form>
             <button onClick={handleGoogleLogin} className='w-full py-2 border border-orange-500 text-orange-500 font-medium cursor-pointer flex justify-center items-center gap-3 duration-300 hover:bg-orange-500 hover:text-gray-100 bg-gray-100'><FaGoogle /><span>Login with Google</span></button>

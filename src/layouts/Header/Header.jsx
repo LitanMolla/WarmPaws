@@ -1,11 +1,17 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import Container from '../../components/Container/Container'
 import Logo from '../../components/Logo/Logo'
 import { Link, NavLink } from 'react-router'
 import { FaBars } from 'react-icons/fa'
+import { AuthContex } from '../../contex/AuthContex/AuthContex'
 
 const Header = () => {
-    const [open, setOpen] = useState(false)
+    const { user,logOutUser } = useContext(AuthContex);
+    const [open, setOpen] = useState(false);
+    console.log(user);
+    const handleLogOut = () => {
+        logOutUser()
+    }
     const menu = <>
         <li><NavLink to='/' className={({ isActive }) => isActive ? 'text-orange-500' : ''}>Home</NavLink></li>
         <li><NavLink to='/services' className={({ isActive }) => isActive ? 'text-orange-500' : ''}>Services</NavLink></li>
@@ -21,8 +27,7 @@ const Header = () => {
                             {menu}
                         </ul>
                         <div className="hidden md:flex gap-5">
-                            <Link className='bg-orange-500 text-gray-100 px-6 py-2.5 duration-300 hover:bg-gray-900'>Login</Link>
-                            <button className='bg-orange-500 text-gray-100 px-6 py-2.5 duration-300 hover:bg-gray-900 cursor-pointer'>Logout</button>
+                            {user ? <button onClick={handleLogOut} className='bg-orange-500 text-gray-100 px-6 py-2.5 duration-300 hover:bg-gray-900 cursor-pointer'>Logout</button> : <Link to='/login' className='bg-orange-500 text-gray-100 px-6 py-2.5 duration-300 hover:bg-gray-900'>Login</Link>}
                         </div>
                         {/* bar for show mobile menu */}
                         <button onClick={() => setOpen(prv => !prv)} className='md:hidden text-2xl cursor-pointer '><FaBars /></button>

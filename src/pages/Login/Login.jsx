@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useRef, useState } from 'react'
 import Container from '../../components/Container/Container'
 import { FaEye, FaGoogle } from 'react-icons/fa'
 import { Link } from 'react-router'
@@ -8,8 +8,9 @@ import toast from 'react-hot-toast'
 import ErrorMessage from '../../components/ErrorMessage/ErrorMessage'
 
 const Login = () => {
+  const userEmail = useRef();
   const [showPassword, setShowPassword] = useState(false);
-  const { loginUser, googleLogin } = useContext(AuthContex);
+  const { loginUser, googleLogin, setLoading, loading,forgotPassword } = useContext(AuthContex);
   const handleLogin = (event) => {
     event.preventDefault();
     const email = event.target.email.value;
@@ -25,11 +26,17 @@ const Login = () => {
   const handleGoogleLogin = () => {
     googleLogin()
       .then(result => {
-        toast.success('Login successful')
+        toast.success('Login successful');
+        setLoading(false);
       })
       .catch(error => {
-        ErrorMessage(error)
+        ErrorMessage(error);
+        setLoading(false);
       })
+  }
+  const handleFotgotPassword = () => {
+    const email = userEmail.current.value;
+    forgotPassword(email)
   }
   return (
     <>
@@ -40,7 +47,7 @@ const Login = () => {
               <h4 className='text-2xl font-medium md:text-3xl text-center'>Login your account</h4>
               <div className="space-y-1">
                 <label className='block'>Email</label>
-                <input name='email' type="email" placeholder='Enter your email' className='bg-gray-100 w-full px-5 py-2 border border-gray-300 outline-0' />
+                <input ref={userEmail} name='email' type="email" placeholder='Enter your email' className='bg-gray-100 w-full px-5 py-2 border border-gray-300 outline-0' />
               </div>
               <div className="space-y-1">
                 <label className='block'>Password</label>
@@ -48,6 +55,7 @@ const Login = () => {
                   <input name='password' type={showPassword ? 'text' : 'password'} placeholder='Enter your password' className='bg-gray-100 w-full px-5 py-2 border border-gray-300 outline-0' />
                   <button type='button' onClick={() => setShowPassword(!showPassword)} className='absolute top-1/2 right-5 -translate-y-1/2 cursor-pointer'>{showPassword ? <IoMdEyeOff /> : <FaEye />}</button>
                 </div>
+                <button onClick={handleFotgotPassword} type='button' className='text-orange-500 duration-300 hover:text-orange-600 cursor-pointer'>Forgot your password?</button>
               </div>
               <input type="submit" value="Login" className='bg-orange-500 w-full text-gray-100 py-2 cursor-pointer border duration-300 hover:bg-gray-100 border-orange-500 hover:text-orange-500 font-medium' />
             </form>
