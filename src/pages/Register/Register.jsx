@@ -11,11 +11,11 @@ import Loader from '../../components/Loader/Loader'
 const Register = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState(false)
-  const { createUser, googleLogin, loading, setLoading, updateUser, user } = useContext(AuthContex);
+  const { createUser, googleLogin, loading, setLoading, updateUser, user, setUser } = useContext(AuthContex);
   const navigate = useNavigate()
   useEffect(() => {
     if (user) {
-       navigate('/');
+      navigate('/');
     }
   }, [user, navigate]);
   if (loading) {
@@ -33,6 +33,7 @@ const Register = () => {
       setError(true)
       return
     }
+    setLoading(true)
     createUser(email, password)
       .then(result => {
         toast.success('Register successfully')
@@ -40,6 +41,7 @@ const Register = () => {
           displayName: name,
           photoURL: photo
         })
+        setUser({ ...result.user, displayName: name, photoURL: photo })
         navigate('/')
         setLoading(false);
       })

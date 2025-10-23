@@ -11,7 +11,7 @@ import Loader from '../../components/Loader/Loader'
 const Login = () => {
   const [inputEmail, setInputEmail] = useState('');
   const [showPassword, setShowPassword] = useState(false);
-  const { loginUser, googleLogin, setLoading, loading, user } = useContext(AuthContex);
+  const { loginUser, googleLogin, setLoading, loading, user , setUser} = useContext(AuthContex);
   const location = useLocation();
   const navigate = useNavigate();
   if (loading) {
