@@ -2,6 +2,7 @@ import WinterCareServices from '../../components/WinterCareServices/WinterCareSe
 import Hero from '../../components/Hero/Hero'
 import MeetOurExpert from '../../components/MeetOurExpert/MeetOurExpert'
 import PetCaresWinter from '../../components/PetCaresWinter/PetCaresWinter'
+import PhotoGallery from '../../components/PhotoGallery/PhotoGallery'
 
 const Home = () => {
   return (
@@ -11,6 +12,7 @@ const Home = () => {
         <WinterCareServices />
         <PetCaresWinter/>
         <MeetOurExpert/>
+        <PhotoGallery/>
       </div>
     </>
   )
