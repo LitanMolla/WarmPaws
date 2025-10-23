@@ -1,7 +1,7 @@
 import React, { useContext, useRef, useState } from 'react'
 import Container from '../../components/Container/Container'
 import { FaEye, FaGoogle } from 'react-icons/fa'
-import { Link } from 'react-router'
+import { Link, useLocation, useNavigate } from 'react-router'
 import { IoMdEyeOff } from 'react-icons/io'
 import { AuthContex } from '../../contex/AuthContex/AuthContex'
 import toast from 'react-hot-toast'
@@ -11,6 +11,9 @@ const Login = () => {
   const userEmail = useRef();
   const [showPassword, setShowPassword] = useState(false);
   const { loginUser, googleLogin, setLoading, loading,forgotPassword } = useContext(AuthContex);
+  const location = useLocation();
+  const navigate = useNavigate();
+  console.log(location.state);
   const handleLogin = (event) => {
     event.preventDefault();
     const email = event.target.email.value;
@@ -18,6 +21,7 @@ const Login = () => {
     loginUser(email, password)
       .then(result => {
         toast.success('Login successful')
+        navigate(location.state || '/')
       })
       .catch(error => {
         ErrorMessage(error)
@@ -28,6 +32,7 @@ const Login = () => {
     googleLogin()
       .then(result => {
         toast.success('Login successful');
+        navigate(location.state || '/')
         setLoading(false);
       })
       .catch(error => {

@@ -8,6 +8,7 @@ import Login from '../pages/Login/Login'
 import Register from '../pages/Register/Register'
 import MyProfile from '../pages/MyProfile/MyProfile'
 import ServiceDetails from '../pages/ServiceDetails/ServiceDetails'
+import PrivateRoute from './PrivateRoute'
 
 const AppRouter = createBrowserRouter([
     {
@@ -30,16 +31,17 @@ const AppRouter = createBrowserRouter([
             },
             {
                 path:'services',
-                Component: Services
+                Component: Services,
+                loader: ()=>fetch('/data.json')
             },
             {
                 path:'profile',
-                element: <MyProfile/>
+                element: <PrivateRoute><MyProfile/></PrivateRoute>
             },
             {
                 path: 'service-details/:id',
                 loader: ()=>fetch('/data.json'),
-                element: <ServiceDetails/>
+                element: <PrivateRoute><ServiceDetails/></PrivateRoute>
             }
 
         ]

@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react'
 import Container from '../../components/Container/Container'
 import { FaEye, FaGoogle } from 'react-icons/fa'
-import { Link } from 'react-router'
+import { Link, useNavigate } from 'react-router'
 import { IoMdEyeOff } from 'react-icons/io'
 import { AuthContex } from '../../contex/AuthContex/AuthContex'
 import toast from 'react-hot-toast'
@@ -11,6 +11,7 @@ const Register = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState(false)
   const { createUser, googleLogin, loading, setLoading , updateUser} = useContext(AuthContex);
+  const navigate = useNavigate()
   const handleRegister = (event) => {
     event.preventDefault();
     const name = event.target.name.value;
@@ -31,6 +32,7 @@ const Register = () => {
           displayName: name,
           photoURL: photo
         })
+        navigate('/')
       })
       .catch(error => {
         ErrorMessage(error)
@@ -41,7 +43,8 @@ const Register = () => {
     googleLogin()
       .then(result => {
         toast.success('Login successful');
-        setLoading(false);
+        setLoading(false)
+        navigate('/')
       })
       .catch(error => {
         ErrorMessage(error);

@@ -32,7 +32,7 @@ const Header = () => {
                                     &&
                                     <>
                                         <img className='w-10 h-10 object-cover rounded-full border border-orange-500' src={user?.photoURL} alt={user?.displayName} />
-                                        <div className="px-5 bg-gray-100 border border-gray-300 py-2 absolute right-0 top-13 hidden group-hover:block z-50"><p>{user?.displayName}</p></div>
+                                        <div className="px-5 bg-gray-100 border border-gray-300 py-2 absolute right-0 top-13 hidden group-hover:block z-50 whitespace-nowrap"><p>{user?.displayName}</p></div>
                                     </>
 
                                 }

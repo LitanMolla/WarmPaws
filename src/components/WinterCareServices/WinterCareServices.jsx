@@ -5,7 +5,6 @@ import WinterCareCard from '../WinterCareCard/WinterCareCard';
 
 const WinterCareServices = () => {
     const data = useLoaderData();
-
     return (
         <>
             <div className="bg-gray-100 py-10">

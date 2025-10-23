@@ -18,19 +18,20 @@ const AuthProvider = ({ children }) => {
         return signInWithPopup(auth, googleProvider)
     }
     const logOutUser = async () => {
-        return signOut(auth).then(()=>{
+        return signOut(auth).then(() => {
             toast('Logout successful')
         })
     }
     const forgotPassword = async (email) => {
-        return sendPasswordResetEmail(auth,email).then(()=>{
+        return sendPasswordResetEmail(auth, email).then(() => {
             toast.success('Password reset email sent!')
-        }).catch(error=>{
+        }).catch(error => {
             ErrorMessage(error)
         })
     }
     const updateUser = (updateData) => {
-        return updateProfile(auth.currentUser,updateData);
+        setLoading(true)
+        return updateProfile(auth.currentUser, updateData);
     }
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, currentUser => {
