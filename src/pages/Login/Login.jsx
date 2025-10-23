@@ -1,4 +1,4 @@
-import React, { useContext, useRef, useState } from 'react'
+import React, { useContext, useEffect, useRef, useState } from 'react'
 import Container from '../../components/Container/Container'
 import { FaEye, FaGoogle } from 'react-icons/fa'
 import { Link, useLocation, useNavigate } from 'react-router'
@@ -17,9 +17,11 @@ const Login = () => {
   if (loading) {
     return <Loader />
   }
-  if (user) {
-    return navigate(location.state || '/');
-  }
+  useEffect(() => {
+    if (user) {
+      navigate(location.state || '/');
+    }
+  }, [location.state, user, navigate])
   const handleLogin = (event) => {
     event.preventDefault();
     const email = event.target.email.value;
@@ -27,12 +29,14 @@ const Login = () => {
     loginUser(email, password)
       .then(result => {
         toast.success('Login successful')
+        event.target.reset();
         navigate(location.state || '/')
+        setLoading(false);
       })
       .catch(error => {
         ErrorMessage(error)
+        setLoading(false);
       })
-    event.target.reset();
   }
   const handleGoogleLogin = () => {
     googleLogin()

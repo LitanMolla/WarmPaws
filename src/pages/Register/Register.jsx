@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import Container from '../../components/Container/Container'
 import { FaEye, FaGoogle } from 'react-icons/fa'
 import { Link, useNavigate } from 'react-router'
@@ -11,13 +11,15 @@ import Loader from '../../components/Loader/Loader'
 const Register = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState(false)
-  const { createUser, googleLogin, loading, setLoading , updateUser, user} = useContext(AuthContex);
+  const { createUser, googleLogin, loading, setLoading, updateUser, user } = useContext(AuthContex);
   const navigate = useNavigate()
+  useEffect(() => {
+    if (user) {
+       navigate('/');
+    }
+  }, [user, navigate]);
   if (loading) {
-    return <Loader/>
-  }
-  if (user) {
-    return navigate('/');
+    return <Loader />
   }
   const handleRegister = (event) => {
     event.preventDefault();
@@ -33,16 +35,17 @@ const Register = () => {
     }
     createUser(email, password)
       .then(result => {
-        console.log(result)
         toast.success('Register successfully')
         updateUser({
           displayName: name,
           photoURL: photo
         })
         navigate('/')
+        setLoading(false);
       })
       .catch(error => {
         ErrorMessage(error)
+        setLoading(false);
       })
     event.target.reset();
   }

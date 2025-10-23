@@ -6,9 +6,8 @@ import ErrorMessage from '../../components/ErrorMessage/ErrorMessage'
 
 const MyProfile = () => {
   const { user, updateUser, loading , setLoading } = useContext(AuthContex);
-  const [edit, setEdit] = useState(false)
-  console.log(loading);
-  const { displayName, email, photoURL } = user || [];
+  const [edit, setEdit] = useState(false);
+  const { displayName, email, photoURL } = user || {};
   const handleUpdateInfo = (event) => {
     event.preventDefault()
     const name = event.target.name.value;

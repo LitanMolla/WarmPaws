@@ -1,16 +1,81 @@
-# React + Vite
+# 🐾 WarmPaws – Pet Care in Winter
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**WarmPaws** is a React-based web application designed to help users take care of their pets during the winter season.  
+It provides useful services, care tips, and professional advice to keep pets healthy and warm throughout the cold months.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🌐 Live Demo  
+🔗 [Visit WarmPaws Live Site](https://warm-paws.vercel.app/)
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🎯 Project Purpose
+The purpose of **WarmPaws** is to provide pet owners with winter care guidance, including food, warmth, vaccination, and overall health tips.  
+Users can create an account, log in, view their profiles, and explore pet care services — all in one platform.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🚀 Key Features
+
+✅ **User Authentication (Firebase):**  
+Users can register and log in using Firebase Authentication.
+
+✅ **Private Route Protection:**  
+`Profile` and `Service Details` pages are protected and accessible only to logged-in users.  
+If not logged in, users are automatically redirected to the **Login Page**.
+
+✅ **Responsive Design:**  
+Optimized for all devices — mobile, tablet, and desktop.
+
+✅ **Smooth Animations with AOS:**  
+Beautiful scroll animations using the AOS (Animate On Scroll) library.
+
+✅ **Modern UI Slider with Swiper:**  
+Interactive and responsive sliders for showcasing services or banners.
+
+✅ **Toast Notifications:**  
+Implemented with `react-hot-toast` for smooth and friendly user alerts.
+
+---
+
+## 🧩 NPM Packages Used
+
+| Package | Description |
+|----------|--------------|
+| **firebase** | Handles user authentication |
+| **react-hot-toast** | For user notifications |
+| **swiper** | For modern and smooth sliders |
+| **aos** | For scroll-based animations |
+
+---
+
+## 🛠️ Technologies Used
+
+- **React.js (Vite)**
+- **React Router DOM**
+- **Tailwind CSS**
+- **Firebase Authentication**
+- **AOS Animation**
+- **Swiper.js**
+- **React Hot Toast**
+
+---
+
+## 📸 Project Pages Overview
+
+- **Home Page** – Winter pet care services and tips.  
+- **Services Page** – List of pet care services.  
+- **Service Details Page** – Individual service info (Private Route).  
+- **Profile Page** – Logged-in user profile (Private Route).  
+- **Login / Register Page** – Firebase-based authentication system.
+
+---
+
+## 🔐 Private Route Logic
+
+If a user tries to access `Profile` or `Service Details` without logging in,  
+they are automatically redirected to the **Login Page**.  
+After successful login, they are redirected back to their requested page.
+
+
