@@ -42,9 +42,26 @@ const Header = () => {
                         <button onClick={() => setOpen(prv => !prv)} className='md:hidden text-2xl cursor-pointer '><FaBars /></button>
                     </nav>
                     {/* mobile menu */}
-                    {open && <ul className='text-center space-y-2 mt-2 md:hidden'>
-                        {menu}
-                    </ul>}
+                    {open && <>
+                        <ul className='text-center space-y-2 mt-2 md:hidden'>
+                            {menu}
+                        </ul>
+                        <div className="md:hidden flex gap-5 items-center justify-center mt-5 ">
+                            {user ? <button onClick={handleLogOut} className='bg-orange-500 text-gray-100 px-6 py-2.5 duration-300 hover:bg-gray-900 cursor-pointer'>Logout</button> : <Link to='/login' className='bg-orange-500 text-gray-100 px-6 py-2.5 duration-300 hover:bg-gray-900 block'>Login</Link>}
+                            <button className='group relative cursor-pointer group'>
+                                {user
+                                    &&
+                                    <>
+                                        <img className='w-10 h-10 object-cover rounded-full border border-orange-500' src={user?.photoURL} alt={user?.displayName} />
+                                        <div className="px-5 bg-gray-100 border border-gray-300 py-2 absolute right-0 top-13 hidden group-hover:block z-50 whitespace-nowrap"><p>{user?.displayName}</p></div>
+                                    </>
+
+                                }
+                            </button>
+                        </div>
+                    </>
+
+                    }
                 </Container>
             </header>
         </>
