@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { createUserWithEmailAndPassword, GoogleAuthProvider, onAuthStateChanged, sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPopup, signOut } from 'firebase/auth'
+import { createUserWithEmailAndPassword, GoogleAuthProvider, onAuthStateChanged, sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from 'firebase/auth'
 import { auth } from '../../firebase/firebase.config'
 import { AuthContex } from '../AuthContex/AuthContex'
 import toast from 'react-hot-toast'
@@ -29,6 +29,9 @@ const AuthProvider = ({ children }) => {
             ErrorMessage(error)
         })
     }
+    const updateUser = (updateData) => {
+        return updateProfile(auth.currentUser,updateData);
+    }
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, currentUser => {
             if (currentUser) {
@@ -52,7 +55,8 @@ const AuthProvider = ({ children }) => {
         loading,
         setLoading,
         logOutUser,
-        forgotPassword
+        forgotPassword,
+        updateUser
     }
     return (
         <AuthContex.Provider value={authData}>

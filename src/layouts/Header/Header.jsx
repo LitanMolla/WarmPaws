@@ -8,7 +8,6 @@ import { AuthContex } from '../../contex/AuthContex/AuthContex'
 const Header = () => {
     const { user, logOutUser } = useContext(AuthContex);
     const [open, setOpen] = useState(false);
-    console.log(user?.displayName);
     const handleLogOut = () => {
         logOutUser()
     }
@@ -33,7 +32,7 @@ const Header = () => {
                                     &&
                                     <>
                                         <img className='w-10 h-10 object-cover rounded-full border border-orange-500' src={user?.photoURL} alt={user?.displayName} />
-                                        <div className="min-w-xl bg-red-500 py-5 absolute right-0 top-13 hidden group-hover:block z-50"></div>
+                                        <div className="px-5 bg-gray-100 border border-gray-300 py-2 absolute right-0 top-13 hidden group-hover:block z-50"><p>{user?.displayName}</p></div>
                                     </>
 
                                 }

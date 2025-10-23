@@ -10,7 +10,7 @@ import ErrorMessage from '../../components/ErrorMessage/ErrorMessage'
 const Register = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState(false)
-  const { createUser, googleLogin, loading, setLoading } = useContext(AuthContex);
+  const { createUser, googleLogin, loading, setLoading , updateUser} = useContext(AuthContex);
   const handleRegister = (event) => {
     event.preventDefault();
     const name = event.target.name.value;
@@ -27,6 +27,10 @@ const Register = () => {
       .then(result => {
         console.log(result)
         toast.success('Register successfully')
+        updateUser({
+          displayName: name,
+          photoURL: photo
+        })
       })
       .catch(error => {
         ErrorMessage(error)
