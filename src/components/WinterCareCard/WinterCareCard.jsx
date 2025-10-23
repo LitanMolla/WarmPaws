@@ -5,7 +5,7 @@ import { Link } from 'react-router';
 const WinterCareCard = ({ service }) => {
     const { serviceId, serviceName, providerName, providerEmail, price, rating, slotsAvailable, description, image, category } = service;
     return (
-        <div className='bg-white border border-gray-200 text-center'>
+        <div className='bg-white border border-gray-200 text-center hover:shadow-xl hover:shadow-gray-300 duration-300'>
             <img className='w-full' src={image} alt={serviceName} />
             <div className="p-5">
                 <div className="flex justify-between items-center gap-5">

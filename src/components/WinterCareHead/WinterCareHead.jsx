@@ -2,7 +2,7 @@ import React, { use } from 'react'
 import PetsCareCard from '../petsCareCard/petsCareCard';
 import Container from '../Container/Container';
 const careDataPromise = fetch('/petsCare.json').then(res => res.json())
-const WinterCare = () => {
+const WinterCareHead = () => {
     const data = use(careDataPromise)
     return (
         <>
@@ -19,4 +19,4 @@ const WinterCare = () => {
     )
 }
 
-export default WinterCare
+export default WinterCareHead
