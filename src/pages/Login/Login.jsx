@@ -6,14 +6,20 @@ import { IoMdEyeOff } from 'react-icons/io'
 import { AuthContex } from '../../contex/AuthContex/AuthContex'
 import toast from 'react-hot-toast'
 import ErrorMessage from '../../components/ErrorMessage/ErrorMessage'
+import Loader from '../../components/Loader/Loader'
 
 const Login = () => {
-  const userEmail = useRef();
   const [inputEmail, setInputEmail] = useState('');
   const [showPassword, setShowPassword] = useState(false);
-  const { loginUser, googleLogin, setLoading, loading, forgotPassword } = useContext(AuthContex);
+  const { loginUser, googleLogin, setLoading, loading, user } = useContext(AuthContex);
   const location = useLocation();
   const navigate = useNavigate();
+  if (loading) {
+    return <Loader />
+  }
+  if (user) {
+    return navigate(location.state || '/');
+  }
   const handleLogin = (event) => {
     event.preventDefault();
     const email = event.target.email.value;
@@ -49,7 +55,7 @@ const Login = () => {
               <h4 className='text-2xl font-medium md:text-3xl text-center'>Login your account</h4>
               <div className="space-y-1">
                 <label className='block'>Email</label>
-                <input onChange={(event)=>setInputEmail(event.target.value)} name='email' type="email" placeholder='Enter your email' className='bg-gray-100 w-full px-5 py-2 border border-gray-300 outline-0' />
+                <input onChange={(event) => setInputEmail(event.target.value)} name='email' type="email" placeholder='Enter your email' className='bg-gray-100 w-full px-5 py-2 border border-gray-300 outline-0' />
               </div>
               <div className="space-y-1">
                 <label className='block'>Password</label>

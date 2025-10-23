@@ -29,7 +29,7 @@ const ServiceDetails = () => {
               <p><b>Price:</b> ${price}</p>
               <p><b>Available:</b> {slotsAvailable}</p>
               <p><b>Category:</b> {category}</p>
-              <p className='flex gap-2'><b>Rating:</b> <p className='flex items-center gap-2 text-yellow-500'><FaStar /><span>{rating}</span></p></p>
+              <div className='flex gap-2'><b>Rating:</b> <p className='flex items-center gap-2 text-yellow-500'><FaStar /><span>{rating}</span></p></div>
               <p><b>Description:</b> {description}</p>
               <form onSubmit={handleBooking} className='w-full space-y-3'>
                 <div className="">

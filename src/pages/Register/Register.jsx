@@ -6,12 +6,19 @@ import { IoMdEyeOff } from 'react-icons/io'
 import { AuthContex } from '../../contex/AuthContex/AuthContex'
 import toast from 'react-hot-toast'
 import ErrorMessage from '../../components/ErrorMessage/ErrorMessage'
+import Loader from '../../components/Loader/Loader'
 
 const Register = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState(false)
-  const { createUser, googleLogin, loading, setLoading , updateUser} = useContext(AuthContex);
+  const { createUser, googleLogin, loading, setLoading , updateUser, user} = useContext(AuthContex);
   const navigate = useNavigate()
+  if (loading) {
+    return <Loader/>
+  }
+  if (user) {
+    return navigate('/');
+  }
   const handleRegister = (event) => {
     event.preventDefault();
     const name = event.target.name.value;

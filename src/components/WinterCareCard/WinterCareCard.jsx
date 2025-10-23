@@ -16,7 +16,7 @@ const WinterCareCard = ({ service }) => {
                     </div>
                 </div>
             </div>
-            <Link to={`service-details/${serviceId}`} className='text-gray-100 bg-orange-500 w-full py-2.5 block duration-300 hover:bg-orange-600'>View Details</Link>
+            <Link to={`/service-details/${serviceId}`} className='text-gray-100 bg-orange-500 w-full py-2.5 block duration-300 hover:bg-orange-600'>View Details</Link>
         </div>
     )
 }

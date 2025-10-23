@@ -1,14 +1,12 @@
 import React, { useContext, useState } from 'react'
 import Container from '../../components/Container/Container'
-import { useLocation, useNavigate } from 'react-router'
+import { useLocation } from 'react-router'
 import { AuthContex } from '../../contex/AuthContex/AuthContex'
-import toast from 'react-hot-toast'
 
 const ForgotPassword = () => {
     const { forgotPassword } = useContext(AuthContex);
     const location = useLocation();
     const [userEmail, setUserEmail] = useState(location.state);
-    const navigate = useNavigate()
     const handleReset = (event) => {
         event.preventDefault();
         forgotPassword(userEmail)
