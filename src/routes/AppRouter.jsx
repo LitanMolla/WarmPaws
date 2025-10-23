@@ -9,6 +9,7 @@ import Register from '../pages/Register/Register'
 import MyProfile from '../pages/MyProfile/MyProfile'
 import ServiceDetails from '../pages/ServiceDetails/ServiceDetails'
 import PrivateRoute from './PrivateRoute'
+import ForgotPassword from '../pages/ForgotPassword/ForgotPassword'
 
 const AppRouter = createBrowserRouter([
     {
@@ -42,6 +43,10 @@ const AppRouter = createBrowserRouter([
                 path: 'service-details/:id',
                 loader: ()=>fetch('/data.json'),
                 element: <PrivateRoute><ServiceDetails/></PrivateRoute>
+            },
+            {
+                path:'forgot-password',
+                Component: ForgotPassword
             }
 
         ]
