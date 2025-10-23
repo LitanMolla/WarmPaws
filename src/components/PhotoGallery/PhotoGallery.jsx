@@ -16,28 +16,28 @@ const PhotoGallery = () => {
                     <h4 className='text-3xl font-medium text-center mb-4'>Photo Gallery</h4>
                     <p className='text-center text-gray-600 mb-5 max-w-xl mx-auto'>Campaign photos of different parts of world and our prestigious Caring work</p>
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
-                        <div className="duration-300 hover:scale-95">
+                        <div className="duration-300 hover:scale-95" data-aos="flip-up">
                             <img className='w-full' src={gallery_1} alt="Photo Gallery" />
                         </div>
-                        <div className="duration-300 hover:scale-95">
+                        <div className="duration-300 hover:scale-95" data-aos="flip-up">
                             <img className='w-full' src={gallery_2} alt="Photo Gallery" />
                         </div>
-                        <div className="duration-300 hover:scale-95">
+                        <div className="duration-300 hover:scale-95" data-aos="flip-up">
                             <img className='w-full' src={gallery_3} alt="Photo Gallery" />
                         </div>
-                        <div className="duration-300 hover:scale-95">
+                        <div className="duration-300 hover:scale-95" data-aos="flip-up">
                             <img className='w-full' src={gallery_4} alt="Photo Gallery" />
                         </div>
-                        <div className="duration-300 hover:scale-95">
+                        <div className="duration-300 hover:scale-95" data-aos="flip-up">
                             <img className='w-full' src={gallery_5} alt="Photo Gallery" />
                         </div>
-                        <div className="duration-300 hover:scale-95">
+                        <div className="duration-300 hover:scale-95" data-aos="flip-up">
                             <img className='w-full' src={gallery_6} alt="Photo Gallery" />
                         </div>
-                        <div className="duration-300 hover:scale-95">
+                        <div className="duration-300 hover:scale-95" data-aos="flip-up">
                             <img className='w-full' src={gallery_7} alt="Photo Gallery" />
                         </div>
-                        <div className="duration-300 hover:scale-95">
+                        <div className="duration-300 hover:scale-95" data-aos="flip-up">
                             <img className='w-full' src={gallery_8} alt="Photo Gallery" />
                         </div>
                     </div>

@@ -1,10 +1,20 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Header from '../Header/Header'
 import { Outlet } from 'react-router'
 import Footer from '../Footer/Footer'
 import { Toaster } from 'react-hot-toast'
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Root = () => {
+  useEffect(() => {
+    AOS.init({
+      offset: 200,
+      duration: 500,
+      easing: 'ease-in-sine',
+      delay: 100,
+    })
+  }, [])
   return (
     <>
       <div className="flex flex-col min-h-screen font-ubuntu text-gray-900">
@@ -13,7 +23,7 @@ const Root = () => {
           <Outlet />
         </main>
         <Footer />
-        <Toaster/>
+        <Toaster />
       </div>
     </>
   )
