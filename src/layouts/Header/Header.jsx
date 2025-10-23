@@ -6,9 +6,9 @@ import { FaBars } from 'react-icons/fa'
 import { AuthContex } from '../../contex/AuthContex/AuthContex'
 
 const Header = () => {
-    const { user,logOutUser } = useContext(AuthContex);
+    const { user, logOutUser } = useContext(AuthContex);
     const [open, setOpen] = useState(false);
-    console.log(user);
+    console.log(user?.displayName);
     const handleLogOut = () => {
         logOutUser()
     }
@@ -26,8 +26,18 @@ const Header = () => {
                         <ul className='hidden md:flex gap-5'>
                             {menu}
                         </ul>
-                        <div className="hidden md:flex gap-5">
+                        <div className="hidden md:flex gap-5 items-center ">
                             {user ? <button onClick={handleLogOut} className='bg-orange-500 text-gray-100 px-6 py-2.5 duration-300 hover:bg-gray-900 cursor-pointer'>Logout</button> : <Link to='/login' className='bg-orange-500 text-gray-100 px-6 py-2.5 duration-300 hover:bg-gray-900'>Login</Link>}
+                            <button className='group relative cursor-pointer group'>
+                                {user
+                                    &&
+                                    <>
+                                        <img className='w-10 h-10 object-cover rounded-full border border-orange-500' src={user?.photoURL} alt={user?.displayName} />
+                                        <div className="min-w-xl bg-red-500 py-5 absolute right-0 top-13 hidden group-hover:block z-50"></div>
+                                    </>
+
+                                }
+                            </button>
                         </div>
                         {/* bar for show mobile menu */}
                         <button onClick={() => setOpen(prv => !prv)} className='md:hidden text-2xl cursor-pointer '><FaBars /></button>

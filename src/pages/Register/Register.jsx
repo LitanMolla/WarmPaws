@@ -31,6 +31,7 @@ const Register = () => {
       .catch(error => {
         ErrorMessage(error)
       })
+    event.target.reset();
   }
   const handleGoogleLogin = () => {
     googleLogin()

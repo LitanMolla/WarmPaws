@@ -22,6 +22,7 @@ const Login = () => {
       .catch(error => {
         ErrorMessage(error)
       })
+    event.target.reset();
   }
   const handleGoogleLogin = () => {
     googleLogin()

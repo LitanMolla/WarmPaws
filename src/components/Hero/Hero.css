@@ -1,21 +1,20 @@
-/* Hero.css */
 .swiper-button-next,
 .swiper-button-prev {
-  color: #f97316; /* orange-500 */
+  color: #f97316; 
   transition: color 0.3s ease;
 }
 
 .swiper-button-next:hover,
 .swiper-button-prev:hover {
-  color: #ea580c; /* orange-600 */
+  color: #ea580c;
 }
 
 .swiper-pagination-bullet {
-  background: #d1d5db; /* gray-300 */
+  background: #d1d5db;
   opacity: 0.7;
 }
 
 .swiper-pagination-bullet-active {
-  background: #f97316; /* orange-500 */
+  background: #f97316; 
   opacity: 1;
 }
