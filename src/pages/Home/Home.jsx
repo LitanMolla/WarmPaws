@@ -1,8 +1,7 @@
-import React from 'react'
-import Container from '../../components/Container/Container'
 import WinterCareServices from '../../components/WinterCareServices/WinterCareServices'
 import Hero from '../../components/Hero/Hero'
-import WinterCareHead from '../../components/WinterCareHead/WinterCareHead'
+import MeetOurExpert from '../../components/MeetOurExpert/MeetOurExpert'
+import PetCaresWinter from '../../components/PetCaresWinter/PetCaresWinter'
 
 const Home = () => {
   return (
@@ -10,7 +9,8 @@ const Home = () => {
       <div className="">
         <Hero />
         <WinterCareServices />
-        <WinterCareHead/>
+        <PetCaresWinter/>
+        <MeetOurExpert/>
       </div>
     </>
   )
