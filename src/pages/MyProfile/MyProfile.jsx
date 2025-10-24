@@ -48,11 +48,11 @@ const MyProfile = () => {
                 <form onSubmit={handleUpdateInfo} className='w-full text-left space-y-2'>
                   <div className="">
                     <label className='block'>Name</label>
-                    <input required name='name' className='bg-white w-full border border-gray-300 px-5 py-2 outline-0' type="text" placeholder='Enter your name' />
+                    <input defaultValue={displayName} required name='name' className='bg-white w-full border border-gray-300 px-5 py-2 outline-0' type="text" placeholder='Enter your name' />
                   </div>
                   <div className="">
                     <label className='block'>Photo URL</label>
-                    <input required name='photo' className='bg-white w-full border border-gray-300 px-5 py-2 outline-0' type="text" placeholder='Enter your photo URL' />
+                    <input defaultValue={photoURL} required name='photo' className='bg-white w-full border border-gray-300 px-5 py-2 outline-0' type="text" placeholder='Enter your photo URL' />
                   </div>
                   <button className='bg-orange-500 w-full py-2 text-gray-100 block cursor-pointer duration-300 transition-all ease-in-out hover:bg-orange-400'>Update Profile</button>
                 </form>
