@@ -52,6 +52,7 @@ const Login = () => {
   }
   return (
     <>
+      <title>Login - WarmPaws</title>
       <div className="my-20">
         <Container>
           <div className="max-w-lg w-full mx-auto p-5 md:p-10 shadow-xl shadow-gray-300 space-y-5">

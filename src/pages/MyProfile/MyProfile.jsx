@@ -5,7 +5,7 @@ import toast from 'react-hot-toast'
 import ErrorMessage from '../../components/ErrorMessage/ErrorMessage'
 
 const MyProfile = () => {
-  const { user, updateUser, loading , setLoading } = useContext(AuthContex);
+  const { user, updateUser, loading, setLoading } = useContext(AuthContex);
   const [edit, setEdit] = useState(false);
   const { displayName, email, photoURL } = user || {};
   const handleUpdateInfo = (event) => {
@@ -30,6 +30,7 @@ const MyProfile = () => {
   }
   return (
     <>
+      <title>My Profile - WarmPaws</title>
       <div className="my-10 md:my-20">
         <Container>
           {
