@@ -7,6 +7,7 @@ const Services = () => {
   const data = useLoaderData();
   return (
     <div>
+      <title>Services - WarmPaws</title>
       <div className="my-10 md:my-20">
         <Container>
           <h4 className='text-3xl font-medium text-center mb-4'>Our Winter Care Services</h4>
