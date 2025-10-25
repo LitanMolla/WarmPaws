@@ -45,7 +45,7 @@ const Footer = () => {
             </div>
           </div>
           <hr className='border-gray-300' />
-          <p className='text-center py-5'>Copyright © 2025. All right reserved by <Link className='duration-300 hover:text-orange-500'>WarmPaws</Link> | <Link className='duration-300 hover:text-orange-500'>Privacy Policy</Link></p>
+          <p className='text-center py-5'>Copyright © 2025. All right reserved by <Link to='/' className='duration-300 hover:text-orange-500'>WarmPaws</Link> | <Link to='/privacy-policy' className='duration-300 hover:text-orange-500'>Privacy Policy</Link></p>
         </Container>
       </footer>
     </>
