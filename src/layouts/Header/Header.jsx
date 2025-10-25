@@ -18,7 +18,7 @@ const Header = () => {
     </>
     return (
         <>
-            <header className='py-3 bg-gray-100'>
+            <header className='py-3 bg-gray-100/50 sticky top-0 left-0 w-full z-50 backdrop-blur-2xl border-b border-b-gray-300'>
                 <Container>
                     <nav className="flex justify-between items-center">
                         <Logo />
