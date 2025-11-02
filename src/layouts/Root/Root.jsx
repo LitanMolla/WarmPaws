@@ -13,7 +13,7 @@ const Root = () => {
   useEffect(() => {
     AOS.init({
       offset: 200,
-      duration: 500,
+      duration: 1000,
       easing: 'ease-in-sine',
       delay: 100,
     })
