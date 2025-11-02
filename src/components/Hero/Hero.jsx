@@ -35,7 +35,6 @@ const Hero = () => {
                                         <div className="space-y-5 text-gray-100 text-center">
                                             <h2 className='text-3xl md:text-5xl font-semibold'>EASY PETS ADOPTION</h2>
                                             <p className='max-w-xl mx-auto md:text-xl'>We are a group of highly trained, experienced animal lovers who are devoted to giving the best care possible.</p>
-                                            <Link className='text-gray-100 bg-gray-900 px-6 md:px-10 py-2.5 md:py-4 border border-orange-500 inline-block duration-300 hover:bg-orange-500'>GET STARTED NOW</Link>
                                         </div>
                                     </div>
                                 </Container>
@@ -55,7 +54,6 @@ const Hero = () => {
                                                 PET CARE GUIDELINES
                                             </h2>
                                             <p className='max-w-xl mx-auto md:text-xl'>We are a group of highly trained, experienced animal lovers who are devoted to giving the best care possible.</p>
-                                            <Link className='text-gray-100 bg-gray-900 px-6 md:px-10 py-2.5 md:py-4 border border-orange-500 inline-block duration-300 hover:bg-orange-500'>GET STARTED NOW</Link>
                                         </div>
                                     </div>
                                 </Container>
@@ -73,7 +71,6 @@ const Hero = () => {
                                         <div className="space-y-5 text-gray-100 text-center">
                                             <h2 className='text-3xl md:text-5xl font-semibold'>THE BEST PET TRAINERS</h2>
                                             <p className='max-w-xl mx-auto md:text-xl'>We are a group of highly trained, experienced animal lovers who are devoted to giving the best care possible.</p>
-                                            <Link className='text-gray-100 bg-gray-900 px-6 md:px-10 py-2.5 md:py-4 border border-orange-500 inline-block duration-300 hover:bg-orange-500'>GET STARTED NOW</Link>
                                         </div>
                                     </div>
                                 </Container>
