@@ -18,7 +18,7 @@ const Header = () => {
     </>
     return (
         <>
-            <header className='py-3 bg-gray-100/50 sticky top-0 left-0 w-full z-50 backdrop-blur-2xl border-b border-b-gray-300'>
+            <header className='py-3 bg-gray-100'>
                 <Container>
                     <nav className="flex justify-between items-center">
                         <Logo />
@@ -26,17 +26,16 @@ const Header = () => {
                             {menu}
                         </ul>
                         <div className="hidden md:flex gap-5 items-center ">
-                            {user ? <button onClick={handleLogOut} className='bg-orange-500 text-gray-100 px-6 py-2.5 duration-300 hover:bg-gray-900 cursor-pointer'>Logout</button> : <Link to='/login' className='bg-orange-500 text-gray-100 px-6 py-2.5 duration-300 hover:bg-gray-900'>Login</Link>}
                             <button className='group relative cursor-pointer group'>
                                 {user
                                     &&
                                     <>
                                         <img className='w-10 h-10 object-cover rounded-full border border-orange-500' src={user?.photoURL} alt={user?.displayName} />
-                                        <div className="px-5 bg-gray-100 border border-gray-300 py-2 absolute right-0 top-13 hidden group-hover:block z-50 whitespace-nowrap"><p>{user?.displayName}</p></div>
                                     </>
-
                                 }
                             </button>
+                            {user ? <button onClick={handleLogOut} className='bg-orange-500 text-gray-100 px-6 py-2.5 duration-300 hover:bg-gray-900 cursor-pointer'>Logout</button> : <Link to='/login' className='bg-orange-500 text-gray-100 px-6 py-2.5 duration-300 hover:bg-gray-900'>Login</Link>}
+                            
                         </div>
                         {/* bar for show mobile menu */}
                         <button onClick={() => setOpen(prv => !prv)} className='md:hidden text-2xl cursor-pointer '><FaBars /></button>
