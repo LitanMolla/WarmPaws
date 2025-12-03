@@ -34,7 +34,7 @@ const Header = () => {
                                     </>
                                 }
                             </button>
-                            {user ? <button onClick={handleLogOut} className='bg-orange-500 text-gray-100 px-6 py-2.5 duration-300 hover:bg-gray-900 cursor-pointer'>Logout</button> : <Link to='/login' className='bg-orange-500 text-gray-100 px-6 py-2.5 duration-300 hover:bg-gray-900'>Login</Link>}
+                            {user ? <button onClick={handleLogOut} className='bg-orange-500 text-gray-100 px-6 py-2.5 duration-300 hover:bg-orange-600 cursor-pointer'>Logout</button> : <Link to='/login' className='bg-orange-500 text-gray-100 px-6 py-2.5 duration-300 hover:bg-orange-600'>Login</Link>}
                             
                         </div>
                         {/* bar for show mobile menu */}
@@ -46,7 +46,7 @@ const Header = () => {
                             {menu}
                         </ul>
                         <div className="md:hidden flex gap-5 items-center justify-center mt-5 ">
-                            {user ? <button onClick={handleLogOut} className='bg-orange-500 text-gray-100 px-6 py-2.5 duration-300 hover:bg-gray-900 cursor-pointer'>Logout</button> : <Link to='/login' className='bg-orange-500 text-gray-100 px-6 py-2.5 duration-300 hover:bg-gray-900 block'>Login</Link>}
+                            {user ? <button onClick={handleLogOut} className='bg-orange-500 text-gray-100 px-6 py-2.5 duration-300 hover:bg-orange-600 cursor-pointer'>Logout</button> : <Link to='/login' className='bg-orange-500 text-gray-100 px-6 py-2.5 duration-300 hover:bg-orange-600 block'>Login</Link>}
                             <button className='group relative cursor-pointer group'>
                                 {user
                                     &&

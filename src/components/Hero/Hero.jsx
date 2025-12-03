@@ -11,11 +11,11 @@ import bg1 from '../../assets/images/bg1.jpg';
 import bg2 from '../../assets/images/bg2.jpg';
 import bg3 from '../../assets/images/bg3.jpg';
 import Container from '../Container/Container';
-import { Link } from 'react-router';
 
 const Hero = () => {
     return (
-        <div className="hero-slider">
+        <div className="">
+            <div className="hero-slider">
             <Swiper
                 modules={[Navigation, Pagination, Autoplay]}
                 spaceBetween={0}
@@ -26,7 +26,7 @@ const Hero = () => {
                 loop={true}
             >
                 <SwiperSlide>
-                    <div className="relative">
+                    <div className="relative max-h-[70vh]">
                         <img src={bg1} alt="Slide 1" className="w-full h-auto object-cover" />
                         <div className="absolute inset-0 bg-gray-900/50">
                             <div className="absolute top-1/2 left-0 right-0 -translate-y-1/2" >
@@ -43,7 +43,7 @@ const Hero = () => {
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <div className="relative">
+                    <div className="relative max-h-[70vh]">
                         <img src={bg2} alt="Slide 1" className="w-full h-auto object-cover" />
                         <div className="absolute inset-0 bg-gray-900/50">
                             <div className="absolute top-1/2 left-0 right-0 -translate-y-1/2" >
@@ -62,7 +62,7 @@ const Hero = () => {
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <div className="relative">
+                    <div className="relative max-h-[70vh]">
                         <img src={bg3} alt="Slide 1" className="w-full h-auto object-cover" />
                         <div className="absolute inset-0 bg-gray-900/50">
                             <div className="absolute top-1/2 left-0 right-0 -translate-y-1/2" >
@@ -79,6 +79,7 @@ const Hero = () => {
                     </div>
                 </SwiperSlide>
             </Swiper>
+        </div>
         </div>
     );
 };
